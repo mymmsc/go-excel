@@ -1,10 +1,10 @@
-package excelize_test
+package excel_test
 
 import (
 	"fmt"
 	"testing"
 
-	"github.com/360EntSecGroup-Skylar/excelize"
+	"github.com/mymmsc/go-excel"
 	"github.com/mohae/deepcopy"
 	"github.com/stretchr/testify/assert"
 )

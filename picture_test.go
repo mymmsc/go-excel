@@ -1,4 +1,4 @@
-package excelize
+package excel
 
 import (
 	"fmt"
@@ -39,7 +39,7 @@ func TestAddPicture(t *testing.T) {
 
 	// Test add picture to worksheet with offset, external hyperlink and positioning.
 	err = xlsx.AddPicture("Sheet1", "F21", filepath.Join("test", "images", "excel.jpg"),
-		`{"x_offset": 10, "y_offset": 10, "hyperlink": "https://github.com/360EntSecGroup-Skylar/excelize", "hyperlink_type": "External", "positioning": "oneCell"}`)
+		`{"x_offset": 10, "y_offset": 10, "hyperlink": "https://github.com/mymmsc/go-excel", "hyperlink_type": "External", "positioning": "oneCell"}`)
 	if !assert.NoError(t, err) {
 		t.FailNow()
 	}

@@ -8,7 +8,7 @@
 // charts of XLSX. This library needs Go version 1.8 or later.
 //
 // See https://xuri.me/excelize for more information about this package.
-package excelize
+package excel
 
 import (
 	"archive/zip"

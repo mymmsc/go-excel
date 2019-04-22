@@ -10,7 +10,7 @@
 // This file contains default templates for XML files we don't yet populated
 // based on content.
 
-package excelize
+package excel
 
 // XMLHeader define an XML declaration can also contain a standalone declaration.
 const XMLHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"

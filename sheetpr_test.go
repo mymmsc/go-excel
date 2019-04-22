@@ -1,4 +1,4 @@
-package excelize_test
+package excel_test
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/mohae/deepcopy"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/360EntSecGroup-Skylar/excelize"
+	"github.com/mymmsc/go-excel"
 )
 
 var _ = []excelize.SheetPrOption{

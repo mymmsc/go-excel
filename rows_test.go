@@ -1,4 +1,4 @@
-package excelize
+package excel
 
 import (
 	"fmt"
@@ -125,7 +125,7 @@ func TestRemoveRow(t *testing.T) {
 	)
 	fillCells(xlsx, sheet1, colCount, rowCount)
 
-	xlsx.SetCellHyperLink(sheet1, "A5", "https://github.com/360EntSecGroup-Skylar/excelize", "External")
+	xlsx.SetCellHyperLink(sheet1, "A5", "https://github.com/mymmsc/go-excel", "External")
 
 	assert.EqualError(t, xlsx.RemoveRow(sheet1, -1), "invalid row number -1")
 
@@ -183,7 +183,7 @@ func TestInsertRow(t *testing.T) {
 	)
 	fillCells(xlsx, sheet1, colCount, rowCount)
 
-	xlsx.SetCellHyperLink(sheet1, "A5", "https://github.com/360EntSecGroup-Skylar/excelize", "External")
+	xlsx.SetCellHyperLink(sheet1, "A5", "https://github.com/mymmsc/go-excel", "External")
 
 	assert.EqualError(t, xlsx.InsertRow(sheet1, -1), "invalid row number -1")
 

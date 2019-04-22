@@ -7,7 +7,7 @@
 // Microsoft Excel™ 2007 and later. Support save file without losing original
 // charts of XLSX. This library needs Go version 1.8 or later.
 
-package excelize
+package excel
 
 import (
 	"bytes"
@@ -51,7 +51,7 @@ func parseFormatPictureSet(formatSet string) (*formatPicture, error) {
 //        _ "image/jpeg"
 //        _ "image/png"
 //
-//        "github.com/360EntSecGroup-Skylar/excelize"
+//        "github.com/mymmsc/go-excel"
 //    )
 //
 //    func main() {
@@ -67,7 +67,7 @@ func parseFormatPictureSet(formatSet string) (*formatPicture, error) {
 //            fmt.Println(err)
 //        }
 //        // Insert a picture offset in the cell with external hyperlink, printing and positioning support.
-//        err = f.AddPicture("Sheet1", "H2", "./image3.gif", `{"x_offset": 15, "y_offset": 10, "hyperlink": "https://github.com/360EntSecGroup-Skylar/excelize", "hyperlink_type": "External", "print_obj": true, "lock_aspect_ratio": false, "locked": false, "positioning": "oneCell"}`)
+//        err = f.AddPicture("Sheet1", "H2", "./image3.gif", `{"x_offset": 15, "y_offset": 10, "hyperlink": "https://github.com/mymmsc/go-excel", "hyperlink_type": "External", "print_obj": true, "lock_aspect_ratio": false, "locked": false, "positioning": "oneCell"}`)
 //        if err != nil {
 //            fmt.Println(err)
 //        }
@@ -111,7 +111,7 @@ func (f *File) AddPicture(sheet, cell, picture, format string) error {
 //        _ "image/jpeg"
 //        "io/ioutil"
 //
-//        "github.com/360EntSecGroup-Skylar/excelize"
+//        "github.com/mymmsc/go-excel"
 //    )
 //
 //    func main() {

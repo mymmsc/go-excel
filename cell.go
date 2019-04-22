@@ -7,7 +7,7 @@
 // Microsoft Excel™ 2007 and later. Support save file without losing original
 // charts of XLSX. This library needs Go version 1.8 or later.
 
-package excelize
+package excel
 
 import (
 	"encoding/xml"
@@ -339,7 +339,7 @@ func (f *File) GetCellHyperLink(sheet, axis string) (bool, string, error) {
 // in this workbook. Maximum limit hyperlinks in a worksheet is 65530. The
 // below is example for external link.
 //
-//    err := f.SetCellHyperLink("Sheet1", "A3", "https://github.com/360EntSecGroup-Skylar/excelize", "External")
+//    err := f.SetCellHyperLink("Sheet1", "A3", "https://github.com/mymmsc/go-excel", "External")
 //    // Set underline and font color style for the cell.
 //    style, err := f.NewStyle(`{"font":{"color":"#1265BE","underline":"single"}}`)
 //    err = f.SetCellStyle("Sheet1", "A3", "A3", style)

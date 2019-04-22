@@ -7,7 +7,7 @@
 // Microsoft Excel™ 2007 and later. Support save file without losing original
 // charts of XLSX. This library needs Go version 1.8 or later.
 
-package excelize
+package excel
 
 // SheetPrOption is an option of a view of a worksheet. See SetSheetPrOptions().
 type SheetPrOption interface {

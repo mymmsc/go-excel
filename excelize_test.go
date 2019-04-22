@@ -1,4 +1,4 @@
-package excelize
+package excel
 
 import (
 	"fmt"
@@ -280,9 +280,9 @@ func TestSetCellHyperLink(t *testing.T) {
 		t.Log(err)
 	}
 	// Test set cell hyperlink in a work sheet already have hyperlinks.
-	assert.NoError(t, f.SetCellHyperLink("Sheet1", "B19", "https://github.com/360EntSecGroup-Skylar/excelize", "External"))
+	assert.NoError(t, f.SetCellHyperLink("Sheet1", "B19", "https://github.com/mymmsc/go-excel", "External"))
 	// Test add first hyperlink in a work sheet.
-	assert.NoError(t, f.SetCellHyperLink("Sheet2", "C1", "https://github.com/360EntSecGroup-Skylar/excelize", "External"))
+	assert.NoError(t, f.SetCellHyperLink("Sheet2", "C1", "https://github.com/mymmsc/go-excel", "External"))
 	// Test add Location hyperlink in a work sheet.
 	assert.NoError(t, f.SetCellHyperLink("Sheet2", "D6", "Sheet1!D8", "Location"))
 
@@ -296,9 +296,9 @@ func TestSetCellHyperLink(t *testing.T) {
 	for row := 1; row <= 65530; row++ {
 		cell, err := CoordinatesToCellName(1, row)
 		assert.NoError(t, err)
-		assert.NoError(t, file.SetCellHyperLink("Sheet1", cell, "https://github.com/360EntSecGroup-Skylar/excelize", "External"))
+		assert.NoError(t, file.SetCellHyperLink("Sheet1", cell, "https://github.com/mymmsc/go-excel", "External"))
 	}
-	assert.EqualError(t, file.SetCellHyperLink("Sheet1", "A65531", "https://github.com/360EntSecGroup-Skylar/excelize", "External"), "over maximum limit hyperlinks in a worksheet")
+	assert.EqualError(t, file.SetCellHyperLink("Sheet1", "A65531", "https://github.com/mymmsc/go-excel", "External"), "over maximum limit hyperlinks in a worksheet")
 }
 
 func TestGetCellHyperLink(t *testing.T) {
@@ -398,7 +398,7 @@ func TestMergeCell(t *testing.T) {
 	f.SetCellValue("Sheet1", "G11", "set value in merged cell")
 	f.SetCellInt("Sheet1", "H11", 100)
 	f.SetCellValue("Sheet1", "I11", float64(0.5))
-	f.SetCellHyperLink("Sheet1", "J11", "https://github.com/360EntSecGroup-Skylar/excelize", "External")
+	f.SetCellHyperLink("Sheet1", "J11", "https://github.com/mymmsc/go-excel", "External")
 	f.SetCellFormula("Sheet1", "G12", "SUM(Sheet1!B19,Sheet1!C19)")
 	f.GetCellValue("Sheet1", "H11")
 	f.GetCellValue("Sheet2", "A6") // Merged cell ref is single coordinate.
@@ -1042,7 +1042,7 @@ func TestInsertCol(t *testing.T) {
 
 	fillCells(f, sheet1, 10, 10)
 
-	f.SetCellHyperLink(sheet1, "A5", "https://github.com/360EntSecGroup-Skylar/excelize", "External")
+	f.SetCellHyperLink(sheet1, "A5", "https://github.com/mymmsc/go-excel", "External")
 	f.MergeCell(sheet1, "A1", "C3")
 
 	err := f.AutoFilter(sheet1, "A2", "B2", `{"column":"B","expression":"x != blanks"}`)
@@ -1064,7 +1064,7 @@ func TestRemoveCol(t *testing.T) {
 
 	fillCells(f, sheet1, 10, 15)
 
-	f.SetCellHyperLink(sheet1, "A5", "https://github.com/360EntSecGroup-Skylar/excelize", "External")
+	f.SetCellHyperLink(sheet1, "A5", "https://github.com/mymmsc/go-excel", "External")
 	f.SetCellHyperLink(sheet1, "C5", "https://github.com", "External")
 
 	f.MergeCell(sheet1, "A1", "B1")
@@ -1336,7 +1336,7 @@ func prepareTestBook1() (*File, error) {
 
 	// Test add picture to worksheet with offset, external hyperlink and positioning.
 	err = f.AddPicture("Sheet1", "F21", filepath.Join("test", "images", "excel.png"),
-		`{"x_offset": 10, "y_offset": 10, "hyperlink": "https://github.com/360EntSecGroup-Skylar/excelize", "hyperlink_type": "External", "positioning": "oneCell"}`)
+		`{"x_offset": 10, "y_offset": 10, "hyperlink": "https://github.com/mymmsc/go-excel", "hyperlink_type": "External", "positioning": "oneCell"}`)
 	if err != nil {
 		return nil, err
 	}
